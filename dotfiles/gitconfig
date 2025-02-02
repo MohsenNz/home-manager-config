@@ -1,0 +1,7 @@
+[user]
+	email = thelight.mn@gmail.com
+	name = Mohsen
+[core]
+	editor = nvim
+[init]
+	defaultBranch = main

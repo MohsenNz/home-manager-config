@@ -1,0 +1,47 @@
+# https://github.com/alacritty/alacritty/blob/master/extra/man/alacritty.5.scd#general
+
+# https://github.com/alacritty/alacritty-theme?tab=readme-ov-file#color-schemes
+# import = ["~/.config/alacritty/theme.toml"]
+import = ["~/.config/handle-theme/alacritty-theme.toml"]
+
+live_config_reload = true
+
+[font]
+size = 17
+
+[font.bold]
+family = "geistmono nerd font"
+style = "Bold"
+
+[font.bold_italic]
+family = "geistmono nerd font"
+style = "Bold Italic"
+
+[font.italic]
+family = "geistmono nerd font"
+style = "Italic"
+
+[font.normal]
+family = "geistmono nerd font"
+style = "Regular"
+
+[[keyboard.bindings]]
+action = "SpawnNewInstance"
+key = "N"
+mods = "Control|Shift"
+
+# [shell]
+# program = "nu"
+
+[window]
+opacity = 1
+startup_mode = "Windowed"
+title = "Alacritty"
+
+[window.dimensions]
+columns = 80
+lines = 20
+
+[window.position]
+x = 2
+y = 2

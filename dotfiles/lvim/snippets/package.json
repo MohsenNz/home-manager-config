@@ -1,0 +1,19 @@
+{
+  "name": "nvim-snippets",
+  "author": "mohsen",
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "contributes": {
+    "snippets": [
+      {
+        "language": "purescript",
+        "path": "./purescript.json"
+      },
+      {
+        "language": "haskell",
+        "path": "./haskell.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "Forall": {
+    "scope": "purescript",
+    "prefix": "fa",
+    "body": "∀"
+  }
+}
