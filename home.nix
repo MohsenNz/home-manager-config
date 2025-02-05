@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  theme' = "dark"; # dark light
+  theme' = "light"; # dark light
   theme = import ./theme.nix theme';
 in
 {
@@ -41,6 +41,7 @@ in
     joshuto
     jq
     mdbook
+    presenterm
 
     # GUI
     # postman
@@ -69,6 +70,8 @@ in
     shellcheck # bash-language-server dependency
     protobuf
     rye # python project manager
+    bun
+    yarn
 
     # # example of custom versions
     # (ghc.overrideAttrs {
@@ -104,9 +107,6 @@ in
     # # environment:
     (writeShellScriptBin "my-hello" ''
       echo "Hello, ${config.home.username}!"
-    '')
-    (writeShellScriptBin "edit-home" ''
-      lvim "$HOME_MANAGER_DIR"/home.nix
     '')
     (writeShellScriptBin "show-dns-ip4" ''
       nmcli dev show | grep 'IP4.DNS'
@@ -166,13 +166,9 @@ in
   home.sessionVariables = {
     PATH = "$HOME/bin:$HOME/.local/bin:$PATH";
     EDITOR = "lvim";
-    HOME_MANAGER_DIR = "$HOME/.config/home-manager";
-    DOTFILES_DIR = "$HOME_MANAGER_DIR/dotfiles";
     VISUAL = "lvim";
 
     XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
-
-    LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib/:/run/opengl-driver/lib/";
   };
 
   # Let Home Manager install and manage itself.

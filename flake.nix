@@ -15,11 +15,16 @@
       system = "x86_64-linux";
       # pkgs = nixpkgs.legacyPackages.${system};
       pkgs-2311 = nixpkgs-2311.legacyPackages.${system};
+      ld_library_path2311 = "${pkgs-2311.stdenv.cc.cc.lib}/lib/:/run/opengl-driver/lib/";
       pkgs = import nixpkgs {
         inherit system;
         overlays = [
-          (final: prev: {
-            lunarvim = pkgs-2311.lunarvim;
+          (_final: _prev: {
+            lunarvim = pkgs-2311.lunarvim.overrideAttrs (_oldAttrs: {
+              postInstall = ''
+                wrapProgram $out/bin/lvim --prefix LD_LIBRARY_PATH : "${ld_library_path2311}"
+              '';
+            });
           })
         ];
       };
