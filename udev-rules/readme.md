@@ -6,4 +6,4 @@ sudo udevadm control --reload # reload udev
 sudo udevadm trigger # if needed
 ```
 
-Customize at https://www.usevia.app/.
+Customize at https://www.usevia.app/. (It only works on Chrome BTW).
