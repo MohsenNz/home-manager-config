@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  theme' = "light"; # dark light
+  theme' = "dark"; # dark light
   theme = import ./theme.nix theme';
 in
 {
@@ -70,14 +70,9 @@ in
     shellcheck # bash-language-server dependency
     protobuf
     rye # python project manager
+    black # python code formatter
     bun
     yarn
-
-    # # example of custom versions
-    # (ghc.overrideAttrs {
-    #   version = "9.2.8";
-    # })
-    # haskell.packages.ghc92.ghc
 
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -186,13 +181,15 @@ in
         alias ll='ls -alF'
         alias la='ls -A'
         alias l='ls -CF'
+
+        . "$HOME/.cargo/env"
         eval "$(starship init bash)"
       '';
     };
-    # direnv = {
-    #   enable = true;
-    #   enableBashIntegration = true; # see note on other shells below
-    #   nix-direnv.enable = true;
-    # };
+    direnv = {
+      enable = true;
+      enableBashIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
   };
 }

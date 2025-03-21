@@ -8,7 +8,7 @@ local opts = {
     settings = {
         haskell = {
             cabalFormattingProvider = "cabalfmt",
-            formattingProvider = "fourmolu" -- fourmolu, ormolu, stylish-haskell, none
+            formattingProvider = "stylish-haskell" -- fourmolu, ormolu, stylish-haskell, none
         }
     },
 }
