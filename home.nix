@@ -42,6 +42,7 @@ in
     jq
     mdbook
     presenterm
+    kmonad
 
     # GUI
     # postman
@@ -133,6 +134,7 @@ in
     ".config/handle-theme/tmux-powerline-theme.sh".text = theme.tmux_powerline;
     ".config/wezterm/color_scheme.lua".text = theme.wezterm;
     # ".config/fontconfig".source = dotfiles/fontconfig;
+    ".config/systemd/user/kmonad.service".source = dotfiles/kmonad.service;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''

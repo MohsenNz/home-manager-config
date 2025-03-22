@@ -3,8 +3,8 @@
 -- [Forum]          (https://www.reddit.com/r/lunarvim/)
 -- [Discord]        (https://discord.com/invite/Xb9B4Ny)
 
-vim.opt.tabstop        = 4
-vim.opt.shiftwidth     = 4
+vim.opt.tabstop        = 2
+vim.opt.shiftwidth     = 2
 vim.opt.expandtab      = true     -- convert tabs to spaces
 vim.opt.foldmethod     = "indent" -- folding set to "expr" for treesitter based folding
 vim.opt.foldexpr       = ""       -- set to "nvim_treesitter#foldexpr()" for treesitter based folding
@@ -40,6 +40,8 @@ lvim.plugins           = {
 vim.filetype.add({
     extension = {
         purs = "purescript",
+        kbd = "lisp",
+        service = "systemd"
     },
 })
 

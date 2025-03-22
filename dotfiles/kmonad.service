@@ -1,0 +1,12 @@
+[Unit]
+Description=KMonad Keyboard Remapping
+After=network.target
+
+[Service]
+ExecStart=/home/mohsen/.nix-profile/bin/kmonad /home/mohsen/.config/home-manager/others/kmonad/asusrog.kbd
+Restart=always
+User=mohsen
+Group=input
+
+[Install]
+WantedBy=default.target

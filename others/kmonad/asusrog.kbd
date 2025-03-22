@@ -1,0 +1,12 @@
+(defcfg
+  input  (device-file "/dev/input/by-id/usb-ASUSTek_Computer_Inc._N-KEY_Device-event-kbd")
+  output (uinput-sink "Asus-Keyboard-KMonad")
+  fallthrough true
+)
+
+;; Switch Capslock and ESC
+(defsrc 
+  caps esc)
+
+(deflayer base
+  esc caps)
