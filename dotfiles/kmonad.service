@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 ExecStart=/home/mohsen/.nix-profile/bin/kmonad /home/mohsen/.config/home-manager/others/kmonad/asusrog.kbd
-Restart=no
+Restart=always
 
 [Install]
 WantedBy=default.target
