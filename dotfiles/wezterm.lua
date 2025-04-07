@@ -14,6 +14,15 @@ config.window_padding = {
     top = 0,
     bottom = 0,
 }
+config.keys           = {
+    -- Turn off the default CMD-m Hide action, allowing CMD-m to
+    -- be potentially recognized and handled by the tab
+    {
+        key = 'w',
+        mods = 'SUPER',
+        action = wezterm.action.DisableDefaultAssignment,
+    },
+}
 -- config.font_dirs      = { '.nix-profile/share/fonts/' }
 
 return config
