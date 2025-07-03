@@ -35,7 +35,7 @@ in
     neofetch
     starship
     neovim
-    lunarvim
+    # lunarvim # TODO remove and all lvim related
     xclip # lunarvim dependency
     tmux-mem-cpu-load # dependency for tmux-powerline (will install by tpm)
     joshuto
@@ -43,6 +43,9 @@ in
     mdbook
     presenterm
     kmonad
+    gobang
+    fd # Alternative to find, lazyvim dependency
+    ripgrep
 
     # GUI
     # postman
@@ -62,13 +65,20 @@ in
     nil # nix lsp
     nixpkgs-fmt
     taplo # toml toolkit (validator, formatter)
-    # nodejs_20
     lua
     lua-language-server
+    typescript-language-server
+    bun
+    yarn
+    nodePackages.prettier
+    # nodejs_20
+    pnpm_8
+    haskell-language-server
     ghc
     cabal-install
-    haskell-language-server
+    stylish-haskell
     shellcheck # bash-language-server dependency
+    bash-language-server
     protobuf
     rye # python project manager
     black # python code formatter
@@ -161,9 +171,9 @@ in
   # it works if this be enabled
   # programs.bash.enable = true;
   home.sessionVariables = {
-    PATH = "$HOME/bin:$HOME/.local/bin:$PATH";
-    EDITOR = "lvim";
-    VISUAL = "lvim";
+    PATH = "$HOME/bin:$HOME/.local/bin:$HOME/.tiup/bin:$PATH";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
 
     XDG_DATA_DIRS = "$HOME/.nix-profile/share:$XDG_DATA_DIRS";
   };

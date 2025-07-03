@@ -1,5 +1,5 @@
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 
 -- https://haskell-language-server.readthedocs.io/en/latest/configuration.html
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#hls
