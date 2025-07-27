@@ -35,8 +35,7 @@ in
     neofetch
     starship
     neovim
-    # lunarvim # TODO remove and all lvim related
-    xclip # lunarvim dependency
+    xclip # nvim dependency
     tmux-mem-cpu-load # dependency for tmux-powerline (will install by tpm)
     joshuto
     jq
@@ -84,11 +83,12 @@ in
     black # python code formatter
     bun
     yarn
+    gemini-cli
 
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
+    # It is sometimes useful to fine-tune packages, for example, by applying
+    # overrides. You can do that directly here, just don't forget the
+    # parentheses. Maybe you want to install Nerd Fonts with a limited number of
+    # fonts?
     (nerdfonts.override {
       fonts = [
         "FantasqueSansMono"
@@ -108,9 +108,6 @@ in
     #nerd-fonts.fira-mono
     # nerd-fonts.jetbrains-mono
 
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
     (writeShellScriptBin "my-hello" ''
       echo "Hello, ${config.home.username}!"
     '')
@@ -134,17 +131,24 @@ in
     ".tmux.conf".source = dotfiles/tmux.conf;
     ".tpm".source = dotfiles/tpm;
     ".gitconfig".source = dotfiles/gitconfig;
-    ".config/lvim".source = dotfiles/lvim;
+
     ".config/starship.toml".source = dotfiles/starship.toml;
     ".config/tmux-powerline".source = dotfiles/tmux-powerline;
     ".config/alacritty".source = dotfiles/alacritty;
     ".config/wezterm/wezterm.lua".source = dotfiles/wezterm.lua;
-    ".config/handle-theme/lvim-theme.lua".text = theme.lvim;
-    ".config/handle-theme/alacritty-theme.toml".text = theme.alacritty;
-    ".config/handle-theme/tmux-powerline-theme.sh".text = theme.tmux_powerline;
     ".config/wezterm/color_scheme.lua".text = theme.wezterm;
     # ".config/fontconfig".source = dotfiles/fontconfig;
     ".config/systemd/user/kmonad.service".source = dotfiles/kmonad.service;
+
+    # nvim
+    ".config/nvim/ftplugin".source = dotfiles/nvim/ftplugin;
+    ".config/nvim/lua".source = dotfiles/nvim/lua;
+    ".config/nvim/init.lua".source = dotfiles/nvim/init.lua;
+
+    # theme handle
+    ".config/handle-theme/nvim-theme.lua".text = theme.nvim;
+    ".config/handle-theme/alacritty-theme.toml".text = theme.alacritty;
+    ".config/handle-theme/tmux-powerline-theme.sh".text = theme.tmux_powerline;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
