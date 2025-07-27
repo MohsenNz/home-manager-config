@@ -35,7 +35,7 @@ in
     neofetch
     starship
     neovim
-    xclip # nvim dependency
+    xclip # lazyvim dependency
     tmux-mem-cpu-load # dependency for tmux-powerline (will install by tpm)
     joshuto
     jq
@@ -69,7 +69,6 @@ in
     typescript-language-server
     bun
     yarn
-    nodePackages.prettier
     # nodejs_20
     pnpm_8
     haskell-language-server
@@ -85,28 +84,12 @@ in
     yarn
     gemini-cli
 
-    # It is sometimes useful to fine-tune packages, for example, by applying
-    # overrides. You can do that directly here, just don't forget the
-    # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # fonts?
-    (nerdfonts.override {
-      fonts = [
-        "FantasqueSansMono"
-        "SpaceMono"
-        "GeistMono"
-        "Hasklig"
-        "3270"
-        "FiraMono"
-        "IBMPlexMono"
-        "JetBrainsMono"
-      ];
-    })
-    #nerd-fonts.fantasque-sans-mono
-    #nerd-fonts.space-mono
-    #nerd-fonts.geist-mono
-    #nerd-fonts._3270
-    #nerd-fonts.fira-mono
-    # nerd-fonts.jetbrains-mono
+    nerd-fonts.fantasque-sans-mono
+    nerd-fonts.space-mono
+    nerd-fonts.geist-mono
+    nerd-fonts._3270
+    nerd-fonts.fira-mono
+    nerd-fonts.jetbrains-mono
 
     (writeShellScriptBin "my-hello" ''
       echo "Hello, ${config.home.username}!"
@@ -117,6 +100,16 @@ in
     (writeShellScriptBin "show-dns-ip6" ''
       nmcli dev show | grep 'IP6.DNS'
     '')
+
+    # It is sometimes useful to fine-tune packages, for example, by applying
+    # overrides. You can do that directly here, just don't forget the
+    # parentheses. E g. this is the old way to install nerdfonts
+    # (nerdfonts.override {
+    #   fonts = [
+    #     "FantasqueSansMono"
+    #     "SpaceMono"
+    #   ];
+    # })
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

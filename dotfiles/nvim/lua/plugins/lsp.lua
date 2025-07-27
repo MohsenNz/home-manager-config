@@ -26,7 +26,6 @@ return {
           },
         },
 
-
         nil_ls = { -- nix
           settings = {
             ["nil"] = {
