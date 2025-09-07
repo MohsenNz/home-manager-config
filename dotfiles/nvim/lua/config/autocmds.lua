@@ -7,18 +7,26 @@
 -- Or remove existing autocmds by their group name (which is prefixed with `lazyvim_` for the defaults)
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
-local function indent4()
-  vim.bo.shiftwidth = 4
-  vim.bo.tabstop    = 4
+local function indent(i)
+  vim.bo.shiftwidth = i
+  vim.bo.tabstop    = i
   vim.bo.expandtab  = true
 end
 
-local function set_indent4(pattern_)
+local function indent_for(pattern_, indent_)
   vim.api.nvim_create_autocmd("FileType", {
     pattern  = pattern_,
-    callback = indent4,
+    callback = indent_,
   })
 end
 
-set_indent4("sh") -- go, rust, python already have set (by LSP IMO)
-set_indent4("nginx")
+local function indent2() indent(2) end
+local function indent4() indent(4) end
+
+local function indent2for(pattern_) indent_for(pattern_, indent2) end
+local function indent4for(pattern_) indent_for(pattern_, indent4) end
+
+-- indent2for("haskell")
+indent2for("nix")
+indent4for("sh") -- go, rust, python already have set (by LSP IMO)
+indent4for("nginx")

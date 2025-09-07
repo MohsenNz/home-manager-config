@@ -8,7 +8,7 @@ return {
           settings = {
             haskell = {
               cabalFormattingProvider = "cabalfmt",
-              formattingProvider = "stylish-haskell", -- fourmolu | ormolu | stylish-haskell, none
+              formattingProvider = "fourmolu", -- fourmolu | ormolu | stylish-haskell, none
             },
           },
         },

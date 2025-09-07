@@ -83,6 +83,7 @@ in
     bun
     yarn
     gemini-cli
+    buf
 
     nerd-fonts.fantasque-sans-mono
     nerd-fonts.space-mono
