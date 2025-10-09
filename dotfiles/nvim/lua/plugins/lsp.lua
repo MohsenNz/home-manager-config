@@ -14,16 +14,20 @@ return {
         },
 
         ts_ls = { -- typescript
-          filetypes = { "javascript", "typescript", "vue" },
+          filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue' },
           init_options = {
             plugins = {
               {
-                name = "@vue/typescript-plugin",
+                name = '@vue/typescript-plugin',
                 location = "/usr/local/lib/node_modules/@vue/typescript-plugin",
-                languages = { "javascript", "typescript", "vue" },
+                languages = { 'vue' },
+                configNamespace = 'typescript',
               },
             },
           },
+        },
+
+        vue_ls = { -- vue
         },
 
         nil_ls = { -- nix
@@ -46,7 +50,7 @@ return {
           }
         },
 
-        pyright = { --python
+        pyright = { -- python
         },
 
         bashls = { -- bash

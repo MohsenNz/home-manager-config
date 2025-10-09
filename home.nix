@@ -31,20 +31,23 @@ in
     htop
     tmux
     lazygit
+    lazydocker
     bat
     neofetch
     starship
     neovim
-    xclip # lazyvim dependency
+    tree-sitter # neovim dependency
+    xclip # neovim dependency
     tmux-mem-cpu-load # dependency for tmux-powerline (will install by tpm)
-    joshuto
+    joshuto # terminal file manager
     jq
     mdbook
-    presenterm
+    presenterm # Terminal based slideshow tool
     kmonad
-    gobang
+    gobang # gobang
     fd # Alternative to find, lazyvim dependency
     ripgrep
+    dua # disk usage analyzer, usage: `dua i`
 
     # GUI
     # postman
@@ -67,6 +70,7 @@ in
     lua
     lua-language-server
     typescript-language-server
+    # vue-language-server
     bun
     yarn
     # nodejs_20
@@ -74,14 +78,11 @@ in
     haskell-language-server
     ghc
     cabal-install
-    stylish-haskell
     shellcheck # bash-language-server dependency
     bash-language-server
     protobuf
-    rye # python project manager
-    black # python code formatter
-    bun
-    yarn
+    uv # python project manager
+    pyright
     gemini-cli
     buf
 
