@@ -1,11 +1,15 @@
-## Step 0: Clone
+## #0. Clone
 
 Clone it into the `$HOME/.config/home-manager`.
 
-## #1. Install apt packages
+```bash
+git clone https://github.com/MohsenNz/hm-sysadmin.git $HOME/.config/home-manager
+```
+
+## #1. Install apt packages & dependencies
 
 ```bash
-sudo xargs apt install < ./apt-pkgs -y 
+sudo xargs apt install < ./others/aptpkgs/apt-pkgs -y 
 ```
 
 ## #2. Install Nix
@@ -18,8 +22,15 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 ## #3. Initialize Home-manager (with flake)
 
-Set `home.username` and `home.homeDirectory` in `home.nix` according to your username & home-directory
-in the current system.
+Set `home.username` and `home.homeDirectory` in `home.nix` according to your username & home-directory in the current system and replace `mohsen` in `homeConfigurations."mohsen"` in `flake.nix` with your username. 
+
+Then run (For nixpkgs-25.05 otherwize replace it with the version you are using in flake):
+
+```bash
+nix run home-manager/release-25.05 -- switch
+```
+
+It's for latest (unstable) version:
 
 ```bash
 nix run home-manager/master -- switch

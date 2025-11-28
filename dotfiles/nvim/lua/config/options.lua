@@ -13,6 +13,7 @@ vim.opt.spell          = true
 vim.opt.scrolloff      = 8                                -- scrolloff offset
 vim.opt.sidescrolloff  = 8                                -- sidescrolloff offset
 vim.opt.background     = require("nvim-theme").background -- light | dark
+-- vim.opt.clipboard      = "unnamedplus"
 
 vim.filetype.add({
   extension = {
