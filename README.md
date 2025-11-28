@@ -1,6 +1,6 @@
 ## Step 0: Clone
 
-Clone and go to the directory:
+Clone it into the `$HOME/.config/home-manager`.
 
 ## #1. Install apt packages
 
@@ -18,29 +18,26 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 ## #3. Initialize Home-manager (with flake)
 
-```bash
-bash ./init-home-manager.sh
-```
+Set `home.username` and `home.homeDirectory` in `home.nix` according to your username & home-directory
+in the current system.
 
 ```bash
 nix run home-manager/master -- switch
 ```
 
-After that each time you change home.nix use:
+After that each time you change home.nix use (It will install apps and put dotfiles):
 
 ```bash
 home-manager switch
 ```
 
-It will install apps and put dotfiles.
-
-Or if you want just apply dotfiles without package update, run: 
+Or if you want to just apply dotfiles without package updates, run:
 
 ```bash
 home-manager switch --option substitute false
 ```
 
-More info [here](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone).
+More info is [here](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone).
 
 ## #4. Install Rust
 
