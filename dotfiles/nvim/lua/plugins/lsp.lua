@@ -3,12 +3,12 @@ return {
     "neovim/nvim-lspconfig",
     opts = {
       servers = {
-        hls = { -- haskell
-          filetypes = { "haskell", "lhaskell", "cabal" },
+        hls = {                                  -- haskell
+          filetypes = { "haskell", "lhaskell" }, -- "cabal"
           settings = {
             haskell = {
               cabalFormattingProvider = "cabalfmt",
-              formattingProvider = "fourmolu", -- fourmolu | ormolu | stylish-haskell, none
+              formattingProvider = "stylish-haskell", -- fourmolu | ormolu | stylish-haskell, none
             },
           },
         },
@@ -54,6 +54,11 @@ return {
         },
 
         bashls = { -- bash
+          settings = {
+            bashIde = {
+              shellcheckArguments = "-e SC2034",
+            }
+          }
         },
       },
 

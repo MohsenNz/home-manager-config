@@ -48,11 +48,7 @@ in
     fd # Alternative to find, lazyvim dependency
     ripgrep
     dua # disk usage analyzer, usage: `dua i`
-
-    # GUI
-    # postman
-    # thunderbird
-    # mailspring
+    atac # tui alt of postman
 
     # Gnome
     flat-remix-icon-theme
@@ -85,6 +81,7 @@ in
     pyright
     gemini-cli
     buf
+    go
 
     nerd-fonts.fantasque-sans-mono
     nerd-fonts.space-mono
@@ -170,7 +167,7 @@ in
   # it works if this be enabled
   # programs.bash.enable = true;
   home.sessionVariables = {
-    PATH = "$HOME/bin:$HOME/.local/bin:$HOME/.tiup/bin:$PATH";
+    PATH = "$HOME/bin:$HOME/.local/bin:$HOME/.tiup/bin:$HOME/.foundry/bin:$PATH";
     EDITOR = "nvim";
     VISUAL = "nvim";
 
