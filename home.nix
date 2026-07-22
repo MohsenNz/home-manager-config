@@ -30,25 +30,29 @@ in
     xray
     htop
     tmux
+    tmux-mem-cpu-load # dependency for tmux-powerline (will install by tpm)
     lazygit
     lazydocker
     bat
-    neofetch
     starship
-    neovim
-    tree-sitter # neovim dependency
-    xclip # neovim dependency
-    tmux-mem-cpu-load # dependency for tmux-powerline (will install by tpm)
     joshuto # terminal file manager
     jq
     mdbook
     presenterm # Terminal based slideshow tool
     kmonad
-    gobang # gobang
-    fd # Alternative to find, lazyvim dependency
+    gobang
     ripgrep
     dua # disk usage analyzer, usage: `dua i`
     atac # tui alt of postman
+    # aider-chat
+    # opencode
+
+    neovim
+    tree-sitter # neovim dependency
+    xclip # neovim dependency
+    fd # Alternative to find, Lazyvim dependency
+    # mermaid-cli # Lazyvim dependency for diagram (optional)
+    # tectonic # Lazyvim dependency for LaTeX (optional)
 
     # Gnome
     flat-remix-icon-theme
@@ -63,25 +67,37 @@ in
     nil # nix lsp
     nixpkgs-fmt
     taplo # toml toolkit (validator, formatter)
+    buf
+    protobuf
+    go
+    k6 # testing tool
+    slint-lsp
+    slint-viewer
+    # Lua
     lua
     lua-language-server
+    # TS/JS
     typescript-language-server
     # vue-language-server
     bun
     yarn
-    # nodejs_20
     pnpm_8
+    # Haskell
     haskell-language-server
     ghc
     cabal-install
+    # Bash
     shellcheck # bash-language-server dependency
     bash-language-server
-    protobuf
+    # Python
     uv # python project manager
     pyright
+    # AI tools
     gemini-cli
-    buf
-    go
+    crush # AI coding agent
+    #
+    # pgcli # Postgres CLI
+    # nodejs_20
 
     nerd-fonts.fantasque-sans-mono
     nerd-fonts.space-mono
@@ -191,7 +207,34 @@ in
         alias l='ls -CF'
 
         . "$HOME/.cargo/env"
+
         eval "$(starship init bash)"
+
+        export NVM_DIR="$HOME/.nvm"
+        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+        export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+        # export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+        export PATH=$JAVA_HOME/bin:$PATH
+        export ANDROID_HOME=$HOME/p2/Android/Sdk
+        export PATH=$ANDROID_HOME/platform-tools:$PATH
+        export PATH=$ANDROID_HOME/emulator:$PATH
+        export ANDROID_CLI=$ANDROID_HOME/cmdline-tools/latest/bin
+
+        m-java-export-proxy-socks5 () {
+          ip=$1
+          port=$2
+          export JAVA_TOOL_OPTIONS="\
+          -DsocksProxyHost=$ip \
+          -DsocksProxyPort=$port \
+          -Djava.net.preferIPv4Stack=true"
+        }
+
+        m-kill-force-9 () { kill -9 $1; }
+        m-is-port-open () { ss -tulnp | grep $1; }
+        m-systemd-reex () { sudo systemctl daemon-reexec; }
+        m-systemd-edit () { sudo vim /etc/systemd/system.conf; }
       '';
     };
     direnv = {

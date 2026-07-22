@@ -95,7 +95,7 @@ FIRST_SEP="" #.
 if [ -z $TMUX_POWERLINE_LEFT_STATUS_SEGMENTS ]; then
 	TMUX_POWERLINE_LEFT_STATUS_SEGMENTS=(
 		# "tmux_session_info $blue $thm_bg" \
-        "hostname $eggplant $thm_bg $FIRST_SEP"\
+        # "hostname $eggplant $thm_bg $FIRST_SEP"\
 		# "ifstat 30 255" \
 		#"ifstat_sys 30 255" \
 		# "lan_ip $sky_blue $thm_bg ${TMUX_POWERLINE_SEPARATOR_RIGHT_THIN}" \
@@ -117,10 +117,10 @@ if [ -z $TMUX_POWERLINE_RIGHT_STATUS_SEGMENTS ]; then
 		# "now_playing $spotify_green $spotify_black" \
 		# "cpu 240 136" \
 		# "load 237 167" \
-		"time $thm_black $thm_black4 _ _ _ _ separator_disable" \
-		"date_day $thm_black $thm_black4 $TMUX_POWERLINE_SEPARATOR_THIN" \
-		"tmux_mem_cpu_load $teal $thm_bg _ _ _ _ separator_disable" \
-		"battery $blue $thm_bg _ _ _ _ separator_disable" \
+		# "time $thm_black $thm_black4 _ _ _ _ separator_disable" \
+		# "date_day $thm_black $thm_black4 $TMUX_POWERLINE_SEPARATOR_THIN" \
+		# "tmux_mem_cpu_load $teal $thm_bg _ _ _ _ separator_disable" \
+		# "battery $blue $thm_bg _ _ _ _ separator_disable" \
 		# "weather 37 255" \
 		#"rainbarf 0 ${TMUX_POWERLINE_DEFAULT_FOREGROUND_COLOR}" \
 		#"xkb_layout 125 117" \

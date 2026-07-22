@@ -1,4 +1,5 @@
 export thm_bg="#1f2335"
+# export thm_bg="#131620"
 export thm_fg="#c6d0f5"
 export thm_cyan="#99d1db"
 export thm_black="#292c3c"

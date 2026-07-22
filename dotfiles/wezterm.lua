@@ -1,20 +1,25 @@
 -- https://wezfurlong.org/wezterm/config/lua/config/index.html
-local wezterm         = require 'wezterm'
+local wezterm        = require 'wezterm'
 
-local config          = wezterm.config_builder()
-local color_scheme    = require 'color_scheme'
+local c              = wezterm.config_builder()
+local color_scheme   = require 'color_scheme'
 
-config.color_scheme   = color_scheme
-config.enable_tab_bar = false
-config.font           = wezterm.font "geistmono nerd font"
-config.font_size      = 17
-config.window_padding = {
+c.color_scheme       = color_scheme
+c.enable_tab_bar     = false
+-- c.font               = wezterm.font "geistmono nerd font"
+c.font               = wezterm.font_with_fallback {
+  "geistmono nerd font",
+  "space mono",
+  "geist mono",
+}
+c.font_size          = 16.5
+c.window_padding     = {
   left   = 0,
   right  = 0,
   top    = 0,
   bottom = 0,
 }
-config.keys           = {
+c.keys               = {
   -- Turn off the default CMD-m Hide action, allowing CMD-m to
   -- be potentially recognized and handled by the tab
   {
@@ -23,6 +28,9 @@ config.keys           = {
     action = wezterm.action.DisableDefaultAssignment,
   },
 }
--- config.font_dirs      = { '.nix-profile/share/fonts/' }
+c.window_decorations = "NONE"
+-- c.window_startup_mode = "Maximized"
 
-return config
+-- c.font_dirs      = { '.nix-profile/share/fonts/' }
+
+return c

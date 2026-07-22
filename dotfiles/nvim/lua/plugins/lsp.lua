@@ -8,7 +8,7 @@ return {
           settings = {
             haskell = {
               cabalFormattingProvider = "cabalfmt",
-              formattingProvider = "stylish-haskell", -- fourmolu | ormolu | stylish-haskell, none
+              formattingProvider = "fourmolu", -- fourmolu | ormolu | stylish-haskell, none
             },
           },
         },
@@ -29,6 +29,9 @@ return {
 
         vue_ls = { -- vue
         },
+
+        -- biome = { -- JS/TS
+        -- },
 
         nil_ls = { -- nix
           settings = {
@@ -60,6 +63,15 @@ return {
             }
           }
         },
+
+        slint_lsp = {
+          -- settings = {
+          --   ["slint-lsp"] = {
+          --     documentFormattingProvider = false,
+          --     documentRangeFormattingProvider = false
+          --   }
+          -- }
+        }
       },
 
       inlay_hints = {
@@ -73,6 +85,7 @@ return {
     opts = {
       formatters_by_ft = {
         typescript = { "prettier" },
+        javascript = { "prettier" },
       },
     },
   },

@@ -14,6 +14,7 @@ vim.opt.scrolloff      = 8                                -- scrolloff offset
 vim.opt.sidescrolloff  = 8                                -- sidescrolloff offset
 vim.opt.background     = require("nvim-theme").background -- light | dark
 -- vim.opt.clipboard      = "unnamedplus"
+vim.opt.wrap           = true
 
 vim.filetype.add({
   extension = {

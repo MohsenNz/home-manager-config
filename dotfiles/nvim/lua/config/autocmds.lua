@@ -30,3 +30,13 @@ local function indent4for(pattern_) indent_for(pattern_, indent4) end
 indent2for("nix")
 indent4for("sh") -- go, rust, python already have set (by LSP IMO)
 indent4for("nginx")
+indent4for("slint")
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern  = "slint",
+  callback = function()
+    -- vim.b.autoformat    = false
+    -- vim.opt_local.spell = false
+    vim.opt.spell = false
+  end,
+})
