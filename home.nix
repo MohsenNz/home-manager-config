@@ -93,11 +93,12 @@ in
     uv # python project manager
     pyright
     # AI tools
-    gemini-cli
-    crush # AI coding agent
+    # gemini-cli
+    # crush # AI coding agent
     #
     # pgcli # Postgres CLI
     # nodejs_20
+    lean4
 
     nerd-fonts.fantasque-sans-mono
     nerd-fonts.space-mono
@@ -139,6 +140,7 @@ in
     ".tmux.conf".source = dotfiles/tmux.conf;
     ".tpm".source = dotfiles/tpm;
     ".gitconfig".source = dotfiles/gitconfig;
+    ".tridactylrc".source = dotfiles/tridactylrc;
 
     ".config/starship.toml".source = dotfiles/starship.toml;
     ".config/tmux-powerline".source = dotfiles/tmux-powerline;
@@ -214,15 +216,16 @@ in
         [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
         [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-        export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
         # export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64
+        export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+        # export JAVA_HOME=$HOME/.local/jdks/jdk-21.0.12.1+1
         export PATH=$JAVA_HOME/bin:$PATH
         export ANDROID_HOME=$HOME/p2/Android/Sdk
         export PATH=$ANDROID_HOME/platform-tools:$PATH
         export PATH=$ANDROID_HOME/emulator:$PATH
         export ANDROID_CLI=$ANDROID_HOME/cmdline-tools/latest/bin
 
-        m-java-export-proxy-socks5 () {
+        m_java_export_proxy_socks5() {
           ip=$1
           port=$2
           export JAVA_TOOL_OPTIONS="\
@@ -231,10 +234,17 @@ in
           -Djava.net.preferIPv4Stack=true"
         }
 
-        m-kill-force-9 () { kill -9 $1; }
-        m-is-port-open () { ss -tulnp | grep $1; }
-        m-systemd-reex () { sudo systemctl daemon-reexec; }
-        m-systemd-edit () { sudo vim /etc/systemd/system.conf; }
+        m_kill_force_9() { kill -9 $1; }
+        m_is_port_open() { ss -tulnp | grep $1; }
+        m_systemd_reex() { sudo systemctl daemon-reexec; }
+        m_systemd_edit() { sudo vim /etc/systemd/system.conf; }
+
+        # work on wayland
+        m_orientation_hdmi1()        { gnome-randr modify HDMI-1 --rotate $1; }
+        m_orientation_hdmi2()        { gnome-randr modify HDMI-2 --rotate $1; }
+        m_orientation_hdmi3()        { gnome-randr modify HDMI-3 --rotate $1; }
+        m_orientation_hdmi1_normal() { gnome-randr modify HDMI-1 --rotate normal; }
+        m_orientation_hdmi1_right()  { gnome-randr modify HDMI-1 --rotate right; }
       '';
     };
     direnv = {

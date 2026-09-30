@@ -1,7 +1,0 @@
-{
-  "Forall": {
-    "scope": "haskell",
-    "prefix": "fa",
-    "body": "∀"
-  }
-}

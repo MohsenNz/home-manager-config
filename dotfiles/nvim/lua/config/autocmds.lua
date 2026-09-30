@@ -31,6 +31,7 @@ indent2for("nix")
 indent4for("sh") -- go, rust, python already have set (by LSP IMO)
 indent4for("nginx")
 indent4for("slint")
+indent4for("kotlin")
 
 vim.api.nvim_create_autocmd("FileType", {
   pattern  = "slint",

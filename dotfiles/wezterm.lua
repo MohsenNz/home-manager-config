@@ -12,7 +12,7 @@ c.font               = wezterm.font_with_fallback {
   "space mono",
   "geist mono",
 }
-c.font_size          = 16.5
+c.font_size          = 15.5
 c.window_padding     = {
   left   = 0,
   right  = 0,

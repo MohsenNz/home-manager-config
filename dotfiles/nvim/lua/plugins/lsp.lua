@@ -71,7 +71,14 @@ return {
           --     documentRangeFormattingProvider = false
           --   }
           -- }
-        }
+        },
+
+        -- kotlin_language_server = { -- kotlin
+        -- },
+
+        kotlin_lsp = { -- kotlin, the command is { "intellij-server", "--stdio" }
+        },
+
       },
 
       inlay_hints = {

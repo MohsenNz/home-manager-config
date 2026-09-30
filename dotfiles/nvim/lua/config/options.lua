@@ -3,6 +3,7 @@
 -- Add any additional options here
 
 vim.g.snacks_animate   = true
+vim.opt.number         = false
 vim.opt.relativenumber = false
 vim.opt.shiftwidth     = 2
 vim.opt.tabstop        = 2

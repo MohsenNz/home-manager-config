@@ -1,4 +1,4 @@
-## #0. Clone
+## 0. Clone
 
 Clone it into the `$HOME/.config/home-manager`.
 
@@ -6,13 +6,13 @@ Clone it into the `$HOME/.config/home-manager`.
 git clone https://github.com/MohsenNz/hm-sysadmin.git $HOME/.config/home-manager
 ```
 
-## #1. Install apt packages & dependencies
+## 1. Install apt packages & dependencies
 
 ```bash
 sudo xargs apt install < ./others/aptpkgs/apt-pkgs -y 
 ```
 
-## #2. Install Nix
+## 2. Install Nix
 
 See [here](https://zero-to-nix.com/start/install)
 
@@ -20,7 +20,7 @@ See [here](https://zero-to-nix.com/start/install)
 curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
 ```
 
-## #3. Initialize Home-manager (with flake)
+## 3. Initialize Home-manager (with flake)
 
 Set `home.username` and `home.homeDirectory` in `home.nix` according to your username & home-directory in the current system and replace `mohsen` in `homeConfigurations."mohsen"` in `flake.nix` with your username. 
 
@@ -50,7 +50,7 @@ home-manager switch --option substitute false
 
 More info is [here](https://nix-community.github.io/home-manager/index.xhtml#sec-flakes-standalone).
 
-## #4. Install Rust
+## 4. Install Rust
 
 ```bash
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
@@ -64,7 +64,7 @@ To install rust-analyzer:
 rustup component add rust-analyzer
 ```
 
-## #5. Install Wezterm
+## 5. Install Wezterm
 
 ```bash
 curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
@@ -79,17 +79,31 @@ sudo apt update
 sudo apt install wezterm
 ```
 
-## #6. Tmux plugins
+## 6. TMUX plugins
 
-Enter Tmux then press `prefix` + `I` (capital i, as in Install) to fetch the plugin
+Enter TMUX then press `prefix` + `I` (capital i, as in Install) to fetch the plugin
+
+
+## 7. Tridactyl Firefox
+
+Run it to enable Tridactyl to apply `.tridactylrc`:
+`:nativeinstall`
+
+Apply `.tridactylrc`:
+`:source`
+
+Restart to default settings:
+`:sanitise tridactyllocal tridactylsync`
+
+Note: Sometimes you need to restart default then apply source.
 
 ## Hints
 
 ### Gnome extensions
 
 - [Vital](https://extensions.gnome.org/extension/1460/vitals/)
-- [Fullscreen Hot Corner](https://extensions.gnome.org/extension/1562/fullscreen-hot-corner/)
-- [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/)
+- [Fullscreen Hot Corner](https://extensions.gnome.org/extension/1562/fullscreen-hot-corner/) (Optional)
+- [Blur My Shell](https://extensions.gnome.org/extension/3193/blur-my-shell/) (Optional)
 
 ### Tor
 

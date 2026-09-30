@@ -79,6 +79,7 @@ return {
       vim.list_extend(opts.ensure_installed, {
         "haskell",
         "rust",
+        "kotlin",
       })
 
       return opts
