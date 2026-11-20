@@ -143,4 +143,11 @@ return {
       end,
     }
   },
+
+  { -- sumspec
+    "mohsennz/sumspec.nvim",
+    config = function()
+      vim.lsp.enable("sumspec")
+    end,
+  },
 }

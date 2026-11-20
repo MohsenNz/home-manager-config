@@ -22,5 +22,9 @@ vim.filetype.add({
     purs    = "purescript",
     kbd     = "lisp",
     service = "systemd",
+    ebnf    = "ebnf",
+    sumspec = "sumspec",
   },
 })
+
+vim.lsp.enable("sumspec")

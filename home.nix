@@ -26,11 +26,12 @@ in
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    # CLI
+    ### CLI ###
     xray
     htop
     tmux
     tmux-mem-cpu-load # dependency for tmux-powerline (will install by tpm)
+    delta # syntax-highlighting pager for git
     lazygit
     lazydocker
     bat
@@ -54,7 +55,7 @@ in
     # mermaid-cli # Lazyvim dependency for diagram (optional)
     # tectonic # Lazyvim dependency for LaTeX (optional)
 
-    # Gnome
+    ### Gnome ###
     flat-remix-icon-theme
     qogir-theme
     qogir-icon-theme
@@ -62,7 +63,7 @@ in
     whitesur-cursors
     vimix-cursors
 
-    # Development
+    ### Development ###
     devenv
     nil # nix lsp
     nixpkgs-fmt
@@ -73,32 +74,31 @@ in
     k6 # testing tool
     slint-lsp
     slint-viewer
-    # Lua
+    lean4
     lua
     lua-language-server
-    # TS/JS
+    ### TS/JS ###
     typescript-language-server
     # vue-language-server
     bun
     yarn
     pnpm_8
-    # Haskell
+    ### Haskell ###
     haskell-language-server
     ghc
     cabal-install
-    # Bash
+    ### Bash ###
     shellcheck # bash-language-server dependency
     bash-language-server
-    # Python
+    ### Python ###
     uv # python project manager
     pyright
-    # AI tools
+    ### AI tools ###
     # gemini-cli
     # crush # AI coding agent
     #
     # pgcli # Postgres CLI
     # nodejs_20
-    lean4
 
     nerd-fonts.fantasque-sans-mono
     nerd-fonts.space-mono
@@ -185,7 +185,7 @@ in
   # it works if this be enabled
   # programs.bash.enable = true;
   home.sessionVariables = {
-    PATH = "$HOME/bin:$HOME/.local/bin:$HOME/.tiup/bin:$HOME/.foundry/bin:$PATH";
+    PATH = "$HOME/bin:$HOME/.local/bin:$PATH";
     EDITOR = "nvim";
     VISUAL = "nvim";
 
@@ -209,6 +209,10 @@ in
         alias l='ls -CF'
 
         . "$HOME/.cargo/env"
+        export PATH=$HOME/.foundry/bin:$PATH
+        export PATH=$HOME/.opencode/bin:$PATH
+        export PATH=$HOME/.tiup/bin:$PATH
+        export PATH=$HOME/.cabal/bin:$PATH
 
         eval "$(starship init bash)"
 
