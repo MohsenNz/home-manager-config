@@ -3,7 +3,7 @@
 Clone it into the `$HOME/.config/home-manager`.
 
 ```bash
-git clone https://github.com/MohsenNz/hm-sysadmin.git $HOME/.config/home-manager
+git clone https://github.com/MohsenNz/home-manager-config.git $HOME/.config/home-manager
 ```
 
 ## 1. Install apt packages & dependencies
