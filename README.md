@@ -9,6 +9,7 @@ git clone https://github.com/MohsenNz/home-manager-config.git $HOME/.config/home
 ## 1. Install apt packages & dependencies
 
 ```bash
+sudo apt update
 sudo xargs apt install < ./others/aptpkgs/apt-pkgs -y 
 ```
 
