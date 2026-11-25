@@ -80,10 +80,15 @@ sudo apt update
 sudo apt install wezterm
 ```
 
+Set as default:
+
+```bash
+sudo update-alternatives --config x-terminal-emulator
+```
+
 ## 6. TMUX plugins
 
 Enter TMUX then press `prefix` + `I` (capital i, as in Install) to fetch the plugin
-
 
 ## 7. Tridactyl Firefox
 
